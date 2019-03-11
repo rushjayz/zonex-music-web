@@ -16,7 +16,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "dev-install": "npm install && cd  auth-server && npm instal",
+    "dev-start": "concurrently --kill-others \"node auth-server/authorization_code/app.js\" \"react-scripts start\""
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -26,5 +28,8 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "devDependencies": {
+    "concurrently": "^4.1.0"
+  }
 }

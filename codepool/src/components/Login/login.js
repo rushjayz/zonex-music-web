@@ -1,13 +1,12 @@
 import React, {Component, Fragment} from 'react';
-import {H1} from '../Theme';
-import styled from 'styled-components';
+import { Redirect } from 'react-router';
 
 class Login extends Component {
     render() {
         return (
             <Fragment>
-                <H1>Zonex Music</H1>
-                <a href='http://localhost:8888'> Login to Spotify </a>
+                <Redirect to={window.location.replace("http://localhost:8888")} />
+                
             </Fragment>
         );
     }

@@ -2,7 +2,8 @@ import React, {Component, Fragment} from 'react';
 import styled from 'styled-components';
 import {Colors, Card, Input, TableWrapper, TableColumn, CardWrapper} from '../Theme';
 import SpotifyWebApi from 'spotify-web-api-js';
-import Tabs from '../Tabs/Tabs'
+import Tabs from '../Tabs/Tabs';
+import {noImage} from './user.svg'; 
 
 const spotifyApi = new SpotifyWebApi();
 
@@ -20,6 +21,8 @@ class Header extends Component {
     updateSearch =() =>{
         spotifyApi.search(this.state.search, ['track','artist','album'])
         .then((response) => {
+
+            // Get track list
             const searchlistTracks = response.tracks.items.map( 
                 obj => ({
                     trackName: obj.name,
@@ -28,17 +31,19 @@ class Header extends Component {
                 })
             )
 
+            // Get artist list
             const searchlistArtists = response.artists.items.map( 
                 obj => ({ 
                     artistName: obj.name,
-                    artistImage: (obj.images[0]) ? obj.images[0].url : ''
+                    artistImage: (obj.images[0]) ? obj.images[0].url : 'https://via.placeholder.com/300'
                 })
             )
 
-            const searchlistAlbums = response.artists.items.map( 
+            // Get Album list
+            const searchlistAlbums = response.albums.items.map( 
                 obj => ({
                     albumName: obj.name,
-                    albumImage: (obj.images[0]) ? obj.images[0].url : ''
+                    albumImage: (obj.images[0]) ? obj.images[0].url : 'https://via.placeholder.com/300'
                 })
             )
 
