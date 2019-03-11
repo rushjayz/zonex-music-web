@@ -33,4 +33,4 @@ Features
  - Click on the playlist and navigate to view tracks inside the playlist
  - Filter the tracks inside the playlist
 
-By Navigating to "Find", users are able to search tracks, artists and ablums. Search results are broken and shown in tab view.
+By Navigating to "Find", users are able to search tracks, artists and ablums. Search results are divided and shown in tab view.
