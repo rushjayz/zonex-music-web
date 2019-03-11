@@ -4,10 +4,7 @@ export const Colors = {
     white: '#fff',
     gray: '#242033',
     gray_light: '#6b687b',
-<<<<<<< HEAD
     gray_light_bluish: '#89839e',
-=======
->>>>>>> 2a1d66613fe38562ef18c18e9cbda74881ce2aa4
     yellow: '#f8e500',
     red: '#9f156d'
 };

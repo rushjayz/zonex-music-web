@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import React, {Component} from 'react';
 import styled from 'styled-components';
 import {H1, Colors, Device, Row, Column} from '../Theme';
@@ -98,67 +97,4 @@ const MenuItemHome = styled(MenuItem)`
     }
 `
 
-=======
-import React, {Component} from 'react';
-import styled from 'styled-components';
-import {H1, Colors, Device, Row, Column} from '../Theme';
-import {NavLink} from 'react-router-dom';
-
-class Sidebar extends Component {
-
-    searchAll() {
-        alert('sa');
-    }
-
-    render() {
-        return (
-            <React.Fragment>
-                <SidebarWrapper>
-                    <Logo>Zonex Music</Logo>
-                    <Menu grid>
-                    <MenuItem>
-                        <button onClick={() => this.searchAll()}>Find</button>
-                    </MenuItem>
-                        {/* <MenuItem><NavLink to="/">Music</NavLink></MenuItem>
-                        <MenuItem><a href="#">Find</a></MenuItem>
-                        <MenuItem><NavLink to="/albums">Albums</NavLink></MenuItem>
-                        <MenuItem><NavLink to="/collection">Collection</NavLink></MenuItem> */}
-                    </Menu>
-                </SidebarWrapper>
-            </React.Fragment>
-        );
-    }
-}
-
-const SidebarWrapper = styled.aside`
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 100vh;
-    background-color: ${Colors.gray};
-    z-index: 5;
-    padding: 20px;
-    width: 50px;
-
-    @media ${Device.tablet} {
-        width: 200px;
-    }
-`;
-
-const Logo = styled(H1)`
-    color: ${Colors.yellow};
-    margin: 0 0 5rem;
-    font-size: 2.4rem;
-    text-align: center;
-`;
-
-const Menu = styled(Row)`
-
-`
-
-const MenuItem = styled(Column)`
-
-`
-
->>>>>>> 2a1d66613fe38562ef18c18e9cbda74881ce2aa4
 export default Sidebar;

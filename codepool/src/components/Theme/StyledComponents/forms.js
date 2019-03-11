@@ -13,7 +13,6 @@ export const Input = styled.input`
     border-width: ${Theme.input__border_width};
     border-style: ${Theme.input__border_style};
     border-color: ${Theme.input__border_color}; 
-<<<<<<< HEAD
     min-width: calc(100% - 20px); 
     margin-bottom: 20px;
     background-color: ${Colors.gray};
@@ -23,12 +22,6 @@ export const Input = styled.input`
     &::-webkit-input-placeholder {
         color: ${Colors.gray_light_bluish};
     }
-=======
-    min-width: 300px; 
-    margin-bottom: 20px;
-    background-color: ${Colors.gray};
-    color: ${Colors.white}; 
->>>>>>> 2a1d66613fe38562ef18c18e9cbda74881ce2aa4
 `;
 
 export const ErrorLabel = styled.label`

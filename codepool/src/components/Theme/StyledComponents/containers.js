@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 import styled, {css} from 'styled-components';
-=======
-import styled from 'styled-components';
->>>>>>> 2a1d66613fe38562ef18c18e9cbda74881ce2aa4
 import { Device, Animations } from "../Helper/mixins";
 import { Row, Column } from "../Helper/grids";
 import { Theme } from "./theme";
@@ -27,11 +23,7 @@ export const InnerWrapper = styled.section`
 `;
 
 export const CardWrapper = styled(Row)`
-<<<<<<< HEAD
   
-=======
-  overflow: auto;
->>>>>>> 2a1d66613fe38562ef18c18e9cbda74881ce2aa4
 
   &::-webkit-scrollbar {
     height: 5px;
@@ -44,7 +36,6 @@ export const CardWrapper = styled(Row)`
     border-radius: 10px;
     cursor: pointer;
   }
-<<<<<<< HEAD
 
   @media ${Device.tablet} {
     overflow: auto;
@@ -74,17 +65,6 @@ export const Card = styled(Column)`
         width: 150px;
       }
   `};
-=======
-`
-
-export const Card = styled(Column)`
-  width: 150px;
-  
-  overflow: hidden;
-  margin-bottom: 20px;
-  
-  position: relative;
->>>>>>> 2a1d66613fe38562ef18c18e9cbda74881ce2aa4
 
   &:after {
     /* content: '';
@@ -102,13 +82,10 @@ export const Card = styled(Column)`
     }
   }
 
-<<<<<<< HEAD
   p {
     text-align: center;
   }
 
-=======
->>>>>>> 2a1d66613fe38562ef18c18e9cbda74881ce2aa4
   a {
     text-decoration: none;
     color: ${Colors.white};
@@ -118,19 +95,8 @@ export const Card = styled(Column)`
     p {
       position: relative;
       padding: 10px;
-<<<<<<< HEAD
       font-size: 1.4rem;
       margin: 0;
-=======
-      font-size: 1.3rem;
-      margin: 0;
-
-        &:nth-child(3) {
-          color: ${Colors.gray_light};
-          font-size: 1.2rem;
-          padding-top: 0;
-        }
->>>>>>> 2a1d66613fe38562ef18c18e9cbda74881ce2aa4
     }
     
     &:hover {
@@ -140,7 +106,6 @@ export const Card = styled(Column)`
     }
   }
 `;
-<<<<<<< HEAD
 
 export const TableWrapper = styled(Row)`
 
@@ -149,5 +114,3 @@ export const TableWrapper = styled(Row)`
 export const TableColumn = styled(Column)`
   padding: 20px;
 `
-=======
->>>>>>> 2a1d66613fe38562ef18c18e9cbda74881ce2aa4

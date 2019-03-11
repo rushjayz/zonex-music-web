@@ -22,11 +22,7 @@ export let Theme = {
     error_color: `${Colors.red}`,
     success_color: `${Colors.green}`,
 
-<<<<<<< HEAD
     grid__gap: '10px',
-=======
-    grid__gap: '30px',
->>>>>>> 2a1d66613fe38562ef18c18e9cbda74881ce2aa4
 
     input__padding: '6px 10px',
     input__border_width: '2px',
@@ -55,10 +51,7 @@ export const GlobalStyle = createGlobalStyle`
     html {
         font-size: 62.5%;
         font-size-adjust: 100%;
-<<<<<<< HEAD
         overflow: hidden;
-=======
->>>>>>> 2a1d66613fe38562ef18c18e9cbda74881ce2aa4
         
         body {
             margin: 0;
@@ -78,20 +71,12 @@ export const GlobalStyle = createGlobalStyle`
               }
             }
              
-<<<<<<< HEAD
             button {
-=======
-             button {
->>>>>>> 2a1d66613fe38562ef18c18e9cbda74881ce2aa4
                 background: transparent;
                 border: 0;
                 box-shadow: none;
                 width: auto;
-<<<<<<< HEAD
             }
-=======
-             }
->>>>>>> 2a1d66613fe38562ef18c18e9cbda74881ce2aa4
         } 
     }
 `;

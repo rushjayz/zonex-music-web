@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import React, {Component, Fragment} from 'react';
 import styled from 'styled-components';
 import {Colors, Card, Input, TableWrapper, TableColumn, CardWrapper} from '../Theme';
@@ -120,49 +119,4 @@ const SearchInput = styled(Input)`
     font-size: 2.2rem;
 `
 
-=======
-import React, {Component} from 'react';
-import {Input} from '../Theme';
-import SpotifyWebApi from 'spotify-web-api-js';
-const spotifyApi = new SpotifyWebApi();
-
-
-
-class Header extends Component {
-    constructor(){
-        super();
-        this.state = {
-            search: ''
-        }
-    } 
-
-    updateSearch(e) {
-        this.setState({
-            search: e.target.value
-        })
-    }
-
-    componentDidMount() {
-        spotifyApi.searchTracks()
-        .then((response) => {
-
-        })
-    }
-
-    render() {
-
-
-        return (
-            <div>
-                <h1>Header</h1>
-                {this.state.search}
-                <Input type="text"
-                    value={this.state.search}
-                    onChange={this.componentDidMount.bind(this)} />
-            </div>
-        );
-    }
-}
-
->>>>>>> 2a1d66613fe38562ef18c18e9cbda74881ce2aa4
 export default Header;
