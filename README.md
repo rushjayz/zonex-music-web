@@ -2,15 +2,10 @@
 
 Clone the project
 
-# Install authentication server
-
-Navigate to zonex-music-web/codepool/auth-server
-Open your terminal and run "npm install" 
-
 # Install App
 
 Navigate to zonex-music-web/codepool
-Open your terminal and run "npm install" 
+Open your terminal and run "npm run dev-install" 
 
 # Running the App
 
