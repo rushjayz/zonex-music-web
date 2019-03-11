@@ -17,7 +17,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "dev-install": "npm install && cd  auth-server && npm instal",
+    "dev-install": "npm install && cd  auth-server && npm install",
     "dev-start": "concurrently --kill-others \"node auth-server/authorization_code/app.js\" \"react-scripts start\""
   },
   "eslintConfig": {
