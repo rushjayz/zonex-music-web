@@ -28,14 +28,12 @@ export const Row = styled.div`
         @media ${Device.tablet} {
             grid-template-columns: ${ ({col_m}) => col_m ? col_m : '' }; 
             grid-template-rows: ${ ({row_m}) => row_m ? row_m : '' };
-<<<<<<< HEAD
             grid-auto-columns: max-content;
 
             ${props => props.auto_flow && css`
                 grid-auto-flow: column;
             `};
-=======
->>>>>>> 2a1d66613fe38562ef18c18e9cbda74881ce2aa4
+
         }
         
         @media ${Device.desktop} {
@@ -51,24 +49,11 @@ export const Row = styled.div`
         flex-direction: ${ ({direction}) => direction ? direction: '' };
     `};
 
-<<<<<<< HEAD
-=======
-    ${props => props.auto_flow && css`
-        grid-auto-flow: column;
-    `};
-
-    grid-auto-columns: max-content;
-
->>>>>>> 2a1d66613fe38562ef18c18e9cbda74881ce2aa4
     height: ${ ({height}) => height ? height : '' }; 
 `;
 
 export const Column = styled.div`
-<<<<<<< HEAD
     ${({ sm }) => (sm ? getWidthString(sm) : '')}; 
-=======
-    ${({ sm }) => (sm ? getWidthString(sm) : 'width:100%')}; 
->>>>>>> 2a1d66613fe38562ef18c18e9cbda74881ce2aa4
     
     ${props => props.grid && css`
       display: grid;

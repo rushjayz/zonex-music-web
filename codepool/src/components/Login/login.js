@@ -1,5 +1,6 @@
 import React, {Component, Fragment} from 'react';
 import {H1} from '../Theme';
+import styled from 'styled-components';
 
 class Login extends Component {
     render() {

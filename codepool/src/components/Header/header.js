@@ -2,7 +2,8 @@ import React, {Component, Fragment} from 'react';
 import styled from 'styled-components';
 import {Colors, Card, Input, TableWrapper, TableColumn, CardWrapper} from '../Theme';
 import SpotifyWebApi from 'spotify-web-api-js';
-import {NavLink} from "react-router-dom";
+import Tabs from '../Tabs/Tabs'
+
 const spotifyApi = new SpotifyWebApi();
 
 class Header extends Component {
@@ -15,7 +16,6 @@ class Header extends Component {
             search: ''
         }
     } 
-
 
     updateSearch =() =>{
         spotifyApi.search(this.state.search, ['track','artist','album'])
@@ -53,8 +53,9 @@ class Header extends Component {
                     value={this.state.search}
                     placeholder={'search'}
                     onChange={ (e)=>{ this.setState( {search:e.target.value}  ); this.updateSearch() } }/>
-                <div>
-                <h4>Track</h4>
+
+                <Tabs>
+                    <div label="Track">
                     {this.state.searchlistTracks.map(function(searchlistTrack, index){
                         return (
                             <TableWrapper key={index} grid columns={'repeat(3,1fr)'}>
@@ -64,18 +65,12 @@ class Header extends Component {
                             </TableWrapper>
                         )}
                     )}
-                </div>
-                <div>
-                    <h4>Artist</h4>
+                    </div>
+                    <div label="Artist">
                     <CardWrapper grid col_s={'repeat(2, 1fr)'} auto_flow>
                         {this.state.searchlistArtists.map(function(searchlistArtist, index){
                             return (
                                 <Card round_details key={index}>
-                                    {/*<NavLink to={list.playlistUrl}>*/}
-                                        {/*<span><img src={list.cover} alt={list.name} /></span>*/}
-                                        {/*<p>{searchlist.name}</p>*/}
-                                        {/**/}
-                                    {/*</NavLink>*/}
                                     <span>
                                         <img src={searchlistArtist.artistImage} alt={searchlistArtist.artistName} />
                                     </span>
@@ -84,18 +79,12 @@ class Header extends Component {
                             )}
                         )}
                     </CardWrapper>
-                </div>
-                <div>
-                    <h4>Albums</h4>
+                    </div>
+                    <div label="Albums">
                     <CardWrapper col_s={'repeat(2, 1fr)'} grid auto_flow> 
                         {this.state.searchlistAlbums.map(function(searchlistAlbum, index){
                             return (
                                 <Card image_details key={index}>
-                                    {/*<NavLink to={list.playlistUrl}>*/}
-                                        {/*<span><img src={list.cover} alt={list.name} /></span>*/}
-                                        {/*<p>{searchlist.name}</p>*/}
-                                        {/**/}
-                                    {/*</NavLink>*/}
                                     <span>
                                         <img src={searchlistAlbum.albumImage} alt={searchlistAlbum.albumName} />
                                     </span>
@@ -104,7 +93,8 @@ class Header extends Component {
                             )}
                         )}
                     </CardWrapper>
-                </div>
+                    </div>
+                </Tabs>
             </Fragment>
         );
     }

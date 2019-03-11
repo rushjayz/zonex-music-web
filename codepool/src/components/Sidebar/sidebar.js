@@ -1,27 +1,32 @@
 import React, {Component} from 'react';
 import styled from 'styled-components';
-import {H1, Colors, Device, Row, Column} from '../Theme';
+import {Colors, Device, Row, Column} from '../Theme';
 import {NavLink} from 'react-router-dom';
 import logo from './logo.svg';
 import homeLogo from './home.svg';
+import searchLogo from './search.svg';
 
 class Sidebar extends Component {
-
-    searchAll() {
-        alert('sa');
-    }
-
     render() {
         return (
             <React.Fragment>
-                <SidebarWrapper>
-                    
+                <SidebarWrapper>                   
                     <Logo>
-                        <img src={logo} className="App-logo" alt="logo" />
+                        <img src={logo} alt="logo" />
                     </Logo>
                     <Menu flex direction={'column'}>
-                    <MenuItemHome><NavLink to="/"><span>Music</span></NavLink></MenuItemHome>
-                    <MenuItem><NavLink to="/search"><span>Find</span></NavLink></MenuItem>
+                    <MenuItemHome>
+                        <NavLink to="/">
+                            <img src={homeLogo} alt="logo" />
+                            <span>Music</span>
+                        </NavLink>
+                    </MenuItemHome>
+                    <MenuItem>
+                        <NavLink to="/search">
+                            <img src={searchLogo} alt="logo" />
+                            <span>Find</span>
+                        </NavLink>
+                    </MenuItem>
                         {/* <MenuItem><NavLink to="/">Music</NavLink></MenuItem>
                         <MenuItem><a href="#">Find</a></MenuItem>
                         <MenuItem><NavLink to="/albums">Albums</NavLink></MenuItem>
@@ -60,7 +65,11 @@ const Logo = styled.div`
 
 const Menu = styled(Row)`
     margin-top: 40px;
-    padding: 0 30px;
+    padding: 0 10px;
+
+    @media ${Device.tablet} {
+        padding: 0 30px;
+    }
 `
 
 const MenuItem = styled(Column)`
@@ -70,6 +79,15 @@ const MenuItem = styled(Column)`
         text-decoration: none;
         padding: 10px;
         position: relative;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+        img {
+            width: 20px;
+            height: 20px;
+            margin-right: 10px;
+        }
 
         @media ${Device.mobile} {
             span {
@@ -92,7 +110,6 @@ const MenuItemHome = styled(MenuItem)`
             top: 0;
             height: 100%;
             width: 5px;
-            /* background-color: ${Colors.gray_light}; */
         }
     }
 `

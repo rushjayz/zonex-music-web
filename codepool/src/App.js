@@ -1,11 +1,9 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import {GlobalStyle, Device} from './components/Theme/';
-// import logo from './logo.svg';
 import Header from './components/Header/header';
 import Sidebar from './components/Sidebar/sidebar';
 import Player from './components/Player/player';
-import Home from './components/Home/home';
 import Playlists from './components/Playlist/playlist';
 import PlaylistsDetails from './components/Playlist/playlistDetail';
 import Login from './components/Login/login'; 
@@ -52,12 +50,10 @@ class App extends Component {
                 <React.Fragment>
                   <Sidebar/>
                   <Player/>
-                  {/* <Header/> */}
-                  {/* <Home/> */}
-                  {/* <Playlists/>  */}
+
                   <Route exact path="/" component={Playlists} />
                   <Route exact path="/search" component={Header} />
-                  <Route path="/:handle" component={PlaylistsDetails} />
+                  <Route exact path="/playlist/:handle" component={PlaylistsDetails} />
                   {/* <Route exact path="/" component={Home} />
                   <Route path="/albums" component={Albums} />
                   <Route path="/collection" component={Playlists} /> */}
@@ -65,13 +61,13 @@ class App extends Component {
               }
 
               {/* If not Logged in */}
-              
+              {!this.state.loggedIn &&
+                <Login/>
+              }  
               
             </BodyWrapper>  
             
-            {!this.state.loggedIn &&
-                <Login/>
-              }         
+                   
         </div>
       </BrowserRouter>
     );

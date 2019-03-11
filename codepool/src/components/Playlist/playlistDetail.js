@@ -1,5 +1,4 @@
 import React, {Component, Fragment} from 'react';
-// import styled from 'styled-components';
 import {H2, TableWrapper, TableColumn, Input} from '../Theme';
 import SpotifyWebApi from 'spotify-web-api-js';
 
@@ -9,7 +8,6 @@ class PlaylistsDetails extends Component {
     constructor(){
         super();
         this.state = {
-            // Defining Playlist array
             tracklist: [],
             playlistname: {
                 name: ''
@@ -18,12 +16,14 @@ class PlaylistsDetails extends Component {
         }
     } 
 
+    // Set input value to search
     updateSearch(e) {
         this.setState({
-            search: e.target.value.substr(0,20)
+            search: e.target.value
         })
     }
     
+    // Get playlist API
     componentDidMount() {
         const { handle } = this.props.match.params
 
@@ -34,7 +34,7 @@ class PlaylistsDetails extends Component {
                     trackname: obj.track.name,
                     artist: obj.track.artists[0].name,
                     album: obj.track.album.name,
-                    duration: (obj.track.duration_ms/60000)
+                    duration: this.getTime(obj.track.duration_ms)
                 })
             )
             
@@ -48,7 +48,16 @@ class PlaylistsDetails extends Component {
         
     }
 
+    // Returning time
+    getTime = (millis) =>{
+        var minutes = Math.floor(millis / 60000);
+        var seconds = ((millis % 60000) / 1000).toFixed(0);
+        return minutes + ":" + (seconds < 10 ? '0' : '') + seconds;
+    }
+
     render() {
+
+        // Filter tracks
         let filterPlaylistDetails = this.state.tracklist.filter(
             (tracklist) => {
                 return tracklist.trackname.toLowerCase().indexOf(this.state.search) !== -1;
@@ -73,7 +82,6 @@ class PlaylistsDetails extends Component {
                         </TableWrapper>
                     )
                 })}
-
             </Fragment>
         );
     }

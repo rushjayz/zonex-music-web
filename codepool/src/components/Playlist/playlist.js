@@ -7,27 +7,26 @@ import {NavLink} from 'react-router-dom';
 const spotifyApi = new SpotifyWebApi();
 
 class Playlists extends Component {
-
     constructor(){
         super();
         this.state = {
-            // Defining Playlist array
             lists: [],
             search: ''
         }
     } 
 
+    // Set input value to search
     updateSearch(e) {
         this.setState({
-            search: e.target.value.substr(0,20)
+            search: e.target.value
         })
     }
     
+    // Get userplaylist API
     componentDidMount() {
         spotifyApi.getUserPlaylists()
         .then((response) => {
             const lists = response.items.map(
-                //Getting all object values
                 obj => ({
                     name: obj.name,
                     cover: obj.images[0].url,
@@ -40,6 +39,7 @@ class Playlists extends Component {
     }
 
     render() {
+        // Filter Playlists
         let filterPlaylists = this.state.lists.filter(
             (list) => {
                 return list.name.toLowerCase().indexOf(this.state.search) !== -1;
@@ -59,7 +59,7 @@ class Playlists extends Component {
                     {filterPlaylists.map(function(list, index){
                         return (
                         <Card image_details key={index}>
-                            <NavLink to={list.playlistUrl}>
+                            <NavLink to={'playlist/'+list.playlistUrl}>
                                 <span><img src={list.cover} alt={list.name} /></span>
                                 <p>{list.name}</p>
                             </NavLink>                   
@@ -67,7 +67,6 @@ class Playlists extends Component {
                         )}
                     )}
                 </CardWrapper>
-
             </Fragment>
         );
     }
