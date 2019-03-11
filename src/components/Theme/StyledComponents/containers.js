@@ -24,7 +24,6 @@ export const InnerWrapper = styled.section`
 
 export const CardWrapper = styled(Row)`
   
-
   &::-webkit-scrollbar {
     height: 5px;
     background-color: transparent;
@@ -38,7 +37,7 @@ export const CardWrapper = styled(Row)`
   }
 
   @media ${Device.tablet} {
-    overflow: auto;
+    /* overflow: auto; */
   }
 `
 
@@ -52,7 +51,7 @@ export const Card = styled(Column)`
       }
 
       @media ${Device.tablet} {
-        width: 200px;
+        /* width: 200px; */
       }
   `};
 
@@ -62,7 +61,7 @@ export const Card = styled(Column)`
       position: relative;
 
       @media ${Device.tablet} {
-        width: 150px;
+        /* width: 150px; */
       }
   `};
 

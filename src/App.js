@@ -1,9 +1,8 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import styled from 'styled-components';
 import {GlobalStyle, Device} from './components/Theme/';
 import Header from './components/Header/header';
 import Sidebar from './components/Sidebar/sidebar';
-import Player from './components/Player/player';
 import Playlists from './components/Playlist/playlist';
 import PlaylistsDetails from './components/Playlist/playlistDetail';
 import Login from './components/Login/login'; 
@@ -21,7 +20,7 @@ class App extends Component {
     if (token) {
       spotifyApi.setAccessToken(token);
     }
-
+    /* Loggin data is passed to a true or false */
     this.state = {
       loggedIn: token ? true : false,
     }
@@ -47,17 +46,13 @@ class App extends Component {
           <BodyWrapper>
               {/* If loggin */}
               { this.state.loggedIn &&
-                <React.Fragment>
-                  <Sidebar/>
-                  <Player/>
+                <Fragment>
+                    <Sidebar/>
 
-                  <Route exact path="/" component={Playlists} />
-                  <Route exact path="/search" component={Header} />
-                  <Route exact path="/playlist/:handle" component={PlaylistsDetails} />
-                  {/* <Route exact path="/" component={Home} />
-                  <Route path="/albums" component={Albums} />
-                  <Route path="/collection" component={Playlists} /> */}
-                </React.Fragment>  
+                    <Route exact path="/" component={Playlists} />
+                    <Route exact path="/search" component={Header} />
+                    <Route exact path="/playlist/:handle" component={PlaylistsDetails} />
+                </Fragment>  
               }
 
               {/* If not Logged in */}
@@ -65,9 +60,7 @@ class App extends Component {
                 <Login/>
               }  
               
-            </BodyWrapper>  
-            
-                   
+            </BodyWrapper>           
         </div>
       </BrowserRouter>
     );

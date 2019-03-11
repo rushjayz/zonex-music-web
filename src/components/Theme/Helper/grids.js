@@ -28,7 +28,7 @@ export const Row = styled.div`
         @media ${Device.tablet} {
             grid-template-columns: ${ ({col_m}) => col_m ? col_m : '' }; 
             grid-template-rows: ${ ({row_m}) => row_m ? row_m : '' };
-            grid-auto-columns: max-content;
+            /* grid-auto-columns: max-content; */
 
             ${props => props.auto_flow && css`
                 grid-auto-flow: column;

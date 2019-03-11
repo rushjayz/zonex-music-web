@@ -4,12 +4,15 @@ Clone the project
 
 # Install App
 
-Navigate to zonex-music-web/codepool
-Open your terminal and run "npm run dev-install" 
+Navigate to zonex-music-web
 
-# Running the App
+### `npm run dev-install`
 
-In your terminal run "npm run dev-start"
+Installs the Project and Developer dependencies
+
+### `npm run dev-start`
+
+Runs the app in the development mode. This will open [http://localhost:3000] in the browser.
 
 # Used Libraries
 

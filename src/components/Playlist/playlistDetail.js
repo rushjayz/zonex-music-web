@@ -23,7 +23,11 @@ class PlaylistsDetails extends Component {
         })
     }
     
-    // Get playlist API
+    /*  Get playlist API 
+        Getting the data using userplaylist. Getting the API results to object valvues and updating 
+        the list array with the object values.
+        Through the handle the playlist ID is passed to retrieve data. Playlist ID is retrieved in the list in playlist.js
+        */
     componentDidMount() {
         const { handle } = this.props.match.params
 
@@ -48,7 +52,8 @@ class PlaylistsDetails extends Component {
         
     }
 
-    // Returning time
+    /* Returning time
+    The duration is recieved through milliseconds. This is converted into minutes and seconds */
     getTime = (millis) =>{
         var minutes = Math.floor(millis / 60000);
         var seconds = ((millis % 60000) / 1000).toFixed(0);
@@ -57,7 +62,7 @@ class PlaylistsDetails extends Component {
 
     render() {
 
-        // Filter tracks
+        // Filter Playlists. input values are converted to lowercase to eliminate case sensitive filtering
         let filterPlaylistDetails = this.state.tracklist.filter(
             (tracklist) => {
                 return tracklist.trackname.toLowerCase().indexOf(this.state.search) !== -1;

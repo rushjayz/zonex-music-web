@@ -22,7 +22,9 @@ class Playlists extends Component {
         })
     }
     
-    // Get userplaylist API
+    /*  Get userplaylist API 
+        Getting the data using userplaylist. Getting the API results to object valvues and updating 
+        the list array with the object values */
     componentDidMount() {
         spotifyApi.getUserPlaylists()
         .then((response) => {
@@ -39,7 +41,7 @@ class Playlists extends Component {
     }
 
     render() {
-        // Filter Playlists
+        // Filter Playlists. input values are converted to lowercase to eliminate case sensitive filtering
         let filterPlaylists = this.state.lists.filter(
             (list) => {
                 return list.name.toLowerCase().indexOf(this.state.search) !== -1;
@@ -55,7 +57,7 @@ class Playlists extends Component {
                     placeholder={'Filter playlist'}
                     onChange={this.updateSearch.bind(this)} />
 
-                <CardWrapper grid col_s={'repeat(2, 1fr)'} auto_flow>
+                <CardWrapper  grid col_s={'repeat(2, 1fr)'} col_m={'repeat(3, 1fr)'} columns={'repeat(4, 1fr)'} gap={'30px'}>
                     {filterPlaylists.map(function(list, index){
                         return (
                         <Card image_details key={index}>
