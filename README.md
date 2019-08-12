@@ -2,8 +2,6 @@
 
 Spotify API based React application.
 
-Clone the project
-
 # Install App
 
 Navigate to zonex-music-web
