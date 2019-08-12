@@ -1,4 +1,6 @@
-# zonex-music-web
+# zonex music
+
+Spotify API based React application.
 
 Clone the project
 
